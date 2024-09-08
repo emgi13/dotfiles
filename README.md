@@ -19,6 +19,7 @@
 - just? (instead of make)
 - bpytop
 - taskwarrior
+- bun
 
 ## Windows Customization
 - WSL
