@@ -123,7 +123,7 @@ alias tt="taskwarrior-tui"
 alias bt="bpytop"
 
 export EDITOR=nvim
-export VISUAL=nvim
+export VISUAL=nv
 
 source /home/linuxbrew/.linuxbrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
