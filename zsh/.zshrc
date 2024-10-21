@@ -113,17 +113,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Neovide
 
-function nv() {
+function neo() {
   neovide.exe --wsl --fork "$@" &
 }
 
-
+alias nv="nvim"
 alias gg="lazygit"
 alias tt="taskwarrior-tui"
 alias bt="bpytop"
 
 export EDITOR=nvim
-export VISUAL=nv
+export VISUAL=nvim
 
 source /home/linuxbrew/.linuxbrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
