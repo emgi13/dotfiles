@@ -172,6 +172,18 @@ _fzf_comprun() {
   esac
 }
 
+# ---- julials ----
+
+julia() {
+  julia_bin=${JULIA_DEPOT_PATH:-~/.julia}/environments/repl/bin/julia
+  if [[ -f "${julia_bin}" ]]; then
+    "${julia_bin}" "$@"
+  else
+    command julia "$@"
+  fi
+}
+
+
 # ---- Yazi ----
 
 function yy() {
@@ -210,4 +222,6 @@ export PATH
 
 # <<< juliaup initialize <<<
 
+# GH integration
 
+eval "$(gh completion --shell zsh)"
