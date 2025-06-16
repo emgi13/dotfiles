@@ -2,7 +2,7 @@ customCommands:
   - key: "C"
     context: "files"
     command: "better-commits"
-    subprocess: true
+    output: terminal
 git:
   paging:
     colorArg: always
@@ -28,6 +28,5 @@ gui:
       - "#cdd6f4"
     searchingActiveBorderColor:
       - "#f9e2af"
-
   authorColors:
     "*": "#b4befe"
