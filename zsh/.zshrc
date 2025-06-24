@@ -225,3 +225,6 @@ export PATH
 # GH integration
 
 eval "$(gh completion --shell zsh)"
+
+# Sioyek integration, outside wsl
+alias sy="/mnt/c/Program\ Files\ \(x86\)/sioyek/sioyek.exe"
