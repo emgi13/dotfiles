@@ -4,14 +4,6 @@ keep_current_path() {
 }
 precmd_functions+=(keep_current_path)
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -122,10 +114,9 @@ alias gg="lazygit"
 alias tt="taskwarrior-tui"
 alias bt="bpytop"
 
-export EDITOR=nvim
-export VISUAL=nvim
-
-source /home/linuxbrew/.linuxbrew/share/powerlevel10k/powerlevel10k.zsh-theme
+export EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
+export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
+export VISUAL=/home/linuxbrew/.linuxbrew/bin/nvim
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -203,9 +194,6 @@ eval "$(zoxide init zsh)"
 
 alias cd="z"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # bun completions
 [ -s "/home/emgixiii/.bun/_bun" ] && source "/home/emgixiii/.bun/_bun"
 
@@ -227,4 +215,8 @@ export PATH
 eval "$(gh completion --shell zsh)"
 
 # Sioyek integration, outside wsl
-alias sy="/mnt/c/Program\ Files\ \(x86\)/sioyek/sioyek.exe"
+function sy() {
+  /mnt/c/Program\ Files\ \(x86\)/sioyek/sioyek.exe "$@"
+}
+
+eval "$(starship init zsh)"
