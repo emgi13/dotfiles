@@ -114,9 +114,9 @@ alias gg="lazygit"
 alias tt="taskwarrior-tui"
 alias bt="bpytop"
 
-export EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
+export EDITOR=nvim
 export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
-export VISUAL=/home/linuxbrew/.linuxbrew/bin/nvim
+export VISUAL=nvim
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
