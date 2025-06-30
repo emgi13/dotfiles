@@ -102,13 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Neovide
-
-function neo() {
-  neovide.exe --wsl --fork "$@" &
-}
-
+#
 alias nv="nvim"
 alias gg="lazygit"
 alias tt="taskwarrior-tui"
