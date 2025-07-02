@@ -195,15 +195,6 @@ alias cd="z"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-path=('/home/emgixiii/.juliaup/bin' $path)
-export PATH
-
-# <<< juliaup initialize <<<
-
 # GH integration
 
 eval "$(gh completion --shell zsh)"
