@@ -205,3 +205,6 @@ function sy() {
 }
 
 eval "$(starship init zsh)"
+
+# Following line was automatically added by arttime installer
+export MANPATH=/home/emgixiii/.local/share/man:$MANPATH
