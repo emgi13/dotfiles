@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 alias nv="nvim"
 alias gg="lazygit"
 alias tt="taskwarrior-tui"
-alias bt="bpytop"
+alias bt="btop"
 
 export EDITOR=nvim
 export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
