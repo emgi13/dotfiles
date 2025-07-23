@@ -112,7 +112,6 @@ export EDITOR=nvim
 export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
 export VISUAL=nvim
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # ---- FZF -----
 
