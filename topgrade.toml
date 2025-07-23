@@ -15,7 +15,7 @@ pre_sudo = true
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["git_repos"]
+disable = ["git_repos", "vim"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
@@ -73,7 +73,7 @@ assume_yes = true
 # this will be ignored if the binary is built without self update support
 #
 # available also via setting the environment variable TOPGRADE_NO_SELF_UPGRADE)
-# no_self_update = true
+no_self_update = false
 
 # Extra tracing filter directives
 # These are prepended to the `--log-filter` argument

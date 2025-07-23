@@ -1,17 +1,21 @@
-# wsl keep same path code
+# INFO: Makes WSL keep path when splitting
 keep_current_path() {
   printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
 }
 precmd_functions+=(keep_current_path)
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# INFO: Brew Autocompletions
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# INFO: GITHUB Integrations
+eval "$(/usr/bin/gh completion --shell zsh)"
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
+# ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -75,7 +79,8 @@ ZSH_THEME=""
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-not-found zsh-bat web-search)
 
-source $ZSH/oh-my-zsh.sh
+# INFO: OhMyZSH
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -94,27 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# INFO: FZF Integration
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-alias nv="nvim"
-alias gg="lazygit"
-alias tt="taskwarrior-tui"
-alias bt="btop"
-
-export EDITOR=nvim
-export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
-export VISUAL=nvim
-
-
-# ---- FZF -----
-
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
@@ -156,7 +142,7 @@ _fzf_comprun() {
   esac
 }
 
-# Bat integrations
+# INFO: BAT integrations
 
 ## Help replacement
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
@@ -165,8 +151,7 @@ alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 ## Man Pager
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
-# ---- julials ----
-
+# INFO: Prebuilt JuliaLS Binaries 
 julia() {
   julia_bin=${JULIA_DEPOT_PATH:-~/.julia}/environments/repl/bin/julia
   if [[ -f "${julia_bin}" ]]; then
@@ -177,46 +162,53 @@ julia() {
 }
 
 
-# ---- Yazi ----
-
+# INFO: Yazi - File Manager
 function yy() {
-  local temp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  local temp
+  temp="$(mktemp -t "yazi-cwd.XXXXXX")"
   yazi "$@" --cwd-file="$temp"
   if cwd="$(cat -- "$temp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    cd -- "$cwd"
+    cd -- "$cwd" || return
   fi
-  rm -f -- "$tmp"
+  rm -f -- "$temp"
 }
 
-# ---- Eza (better ls) -----
-
+# INFO: Eza (Better DIR)
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
+# INFO: ZOZIDE (Better cd)
 eval "$(zoxide init zsh)"
 
 alias cd="z"
 
-# bun completions
+# INFO: BUN
 [ -s "/home/emgixiii/.bun/_bun" ] && source "/home/emgixiii/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# GH integration
-
-eval "$(gh completion --shell zsh)"
-
-# Sioyek integration, outside wsl
+# INFO: Sioyek to open PDFs
 function sy() {
   /mnt/c/Program\ Files\ \(x86\)/sioyek/sioyek.exe "$@"
 }
+
+# INFO: Starship Shell
 
 eval "$(starship init zsh)"
 
 # Following line was automatically added by arttime installer
 export MANPATH=/home/emgixiii/.local/share/man:$MANPATH
 
-# WSL Shutdow
+# INFO: Personal Aliases
+#
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nv="nvim"                 # Neovim
+alias gg="lazygit"              # Git TUI
+alias tt="taskwarrior-tui"      # Task Manager TUI
+alias bt="btop"                 # Resource Manager TUI
+alias wsd="wsl.exe --shutdown"  # WSL Shutdown linux shortcut
 
-alias wsd="wsl.exe --shutdown"
