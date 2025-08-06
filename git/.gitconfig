@@ -1,6 +1,9 @@
+[include]
+    path = ~/catppuccin.gitconfig
+
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
 [user]
 	email = emgi@live.in
 	name = emgixiii
@@ -14,6 +17,7 @@
 [delta]
     navigate = true    # use n and N to move between diff sections
     side-by-side = true
+    features=catppuccin-mocha
 
 
     # delta detects terminal colors automatically; set one of these to disable auto-detection
