@@ -11,13 +11,17 @@
 [core]
   pager = delta
 
+[pager]
+    blame = delta
+
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
     navigate = true    # use n and N to move between diff sections
-    side-by-side = true
     features=catppuccin-mocha
+    line-numbers=true
+    hyperlinks=true
 
 
     # delta detects terminal colors automatically; set one of these to disable auto-detection
@@ -25,18 +29,22 @@
     # light = true
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 
 [diff]
     colorMoved = default
+
 [credential "https://gist.github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
 [difftool]
     prompt = true
+
 [diff]
     tool = nvimdiff
+
 [difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+    cmd = "nvim -d \"$REMOTE\" \"$LOCAL\""
+     
 [pull]
     rebase = true
