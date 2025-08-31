@@ -26,6 +26,7 @@
 - PowerToys
 - Nilesoft Shell (Windows context menu replacement)
 - Windows 11 cursors concept by jepriCreations @ DeviantArt
+- [Windows Hello Sudo](https://github.com/nullpo-head/WSL-Hello-sudo) 
 
 
 ## TODO
