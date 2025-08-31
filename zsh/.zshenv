@@ -6,6 +6,8 @@ export VISUAL=nvim
 export BUN_INSTALL="$HOME/.bun"
 export GO_INSTALL_PATH="/usr/local/go"
 
+typeset -U PATH path
+
 # If you come from bash you might have to change your $PATH.
 export PATH="$GO_INSTALL_PATH/bin:$BUN_INSTALL/bin:/usr/local/texlive/2025/bin/x86_64-linux:$HOME/.elan/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH"
