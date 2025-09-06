@@ -1,5 +1,5 @@
 export EDITOR=nvim
-export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
+export SUDO_EDITOR=/usr/bin/nvim
 export VISUAL=nvim
 
 # INFO: Bun Integration
