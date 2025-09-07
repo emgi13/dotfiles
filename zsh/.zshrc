@@ -1,5 +1,5 @@
 # PLugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-not-found zsh-bat web-search)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting command-not-found zsh-bat web-search)
 
 # Oh My ZSH
 source "$ZSH/oh-my-zsh.sh"
