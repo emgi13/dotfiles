@@ -19,5 +19,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # openai api keys
 source ~/.openai.zsh
 
+# Default Gemini Model
+
+export GEMINI_MODEL="gemini-2.5-flash"
+
 # rust cargo environment
 . "$HOME/.cargo/env"
