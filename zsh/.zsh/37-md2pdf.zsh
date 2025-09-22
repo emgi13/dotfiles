@@ -15,5 +15,5 @@ function md2pdf() {
   # Derive output filename: replace extension with .pdf
   local output="${file%.*}.pdf"
 
-  pandoc "$file" --template=eisvogel -o "$output"
+  pandoc "$file" --template=eisvogel -o "$output" --citeproc
 }
