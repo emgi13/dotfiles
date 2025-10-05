@@ -17,3 +17,8 @@ function md2pdf() {
 
   pandoc "$file" --template=eisvogel -o "$output" --citeproc
 }
+
+_md2pdf() {
+  _arguments '*:filename:_files -g "*.(md|markdown)"'
+}
+compdef _md2pdf md2pdf
