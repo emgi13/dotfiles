@@ -91,11 +91,9 @@ no_self_update = false
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 
 
-# Custom commands
 [commands]
-# "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
-# "Custom command using interactive shell (unix)" = "-i vim_upgrade"
-
+# Winget update windows packages  HACK: Should have not been inside WSL but ¯_(ツ)_/¯
+"Winget Update" = "powershell.exe -Command \"Start-Process winget.exe -ArgumentList @('update', '--include-unknown', '--all') -Verb RunAs\""
 
 [python]
 # enable_pip_review = true                         ###disabled by default
