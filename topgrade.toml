@@ -93,7 +93,7 @@ no_self_update = false
 
 [commands]
 # Winget update windows packages  HACK: Should have not been inside WSL but ¯_(ツ)_/¯
-"Winget Update" = "powershell.exe -Command \"Start-Process winget.exe -ArgumentList @('update', '--include-unknown', '--all') -Verb RunAs\""
+"winget-update" = "pwsh.exe \"sudo winget.exe update --include-unknown --all\""
 
 [python]
 # enable_pip_review = true                         ###disabled by default
