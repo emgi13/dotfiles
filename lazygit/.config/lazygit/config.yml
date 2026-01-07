@@ -4,9 +4,9 @@ customCommands:
     command: "better-commits"
     output: terminal
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
 gui:
   theme:
     activeBorderColor:
