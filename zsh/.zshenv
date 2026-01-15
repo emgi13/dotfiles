@@ -16,9 +16,6 @@ export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# openai api keys
-source ~/.openai.zsh
-
 # Default Gemini Model
 
 export GEMINI_MODEL="gemini-2.5-flash"
