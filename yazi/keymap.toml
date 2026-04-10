@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on   = "Z"
+run  = "shell 'DIR=$(zoxide query -l | fzf); if [ -n \"$DIR\" ]; then ya emit cd \"$DIR\"; fi' --block"
+desc = "Interactive zoxide (zi)"
