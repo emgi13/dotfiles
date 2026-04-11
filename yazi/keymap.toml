@@ -1,4 +1,9 @@
 [[mgr.prepend_keymap]]
-on   = "Z"
-run  = "shell 'DIR=$(zoxide query -l | fzf); if [ -n \"$DIR\" ]; then ya emit cd \"$DIR\"; fi' --block"
+on = "Z"
+run = "shell 'DIR=$(zoxide query -l | fzf); if [ -n \"$DIR\" ]; then ya emit cd \"$DIR\"; fi' --block"
 desc = "Interactive zoxide (zi)"
+
+[[mgr.prepend_keymap]]
+on = ["<A-->"]
+run = "hardlink"
+desc = "Create a hardlink of the hovered file"
